@@ -62,7 +62,7 @@ namespace Library
                 this.Hide();
                 mdi_user mu = new mdi_user();
                 mu.Show();
-               // ad.Show();
+               
             }
         }
     }
