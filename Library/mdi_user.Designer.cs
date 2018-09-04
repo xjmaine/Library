@@ -30,11 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.documentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.documentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +49,22 @@
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
+            // 
+            // documentToolStripMenuItem
+            // 
+            this.documentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addDocumentToolStripMenuItem,
+            this.viewDocumentToolStripMenuItem});
+            this.documentToolStripMenuItem.Name = "documentToolStripMenuItem";
+            this.documentToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.documentToolStripMenuItem.Text = "Document";
+            // 
+            // addDocumentToolStripMenuItem
+            // 
+            this.addDocumentToolStripMenuItem.Name = "addDocumentToolStripMenuItem";
+            this.addDocumentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addDocumentToolStripMenuItem.Text = "Add Document";
+            this.addDocumentToolStripMenuItem.Click += new System.EventHandler(this.addDocumentToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -65,20 +82,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // documentToolStripMenuItem
+            // viewDocumentToolStripMenuItem
             // 
-            this.documentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addDocumentToolStripMenuItem});
-            this.documentToolStripMenuItem.Name = "documentToolStripMenuItem";
-            this.documentToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.documentToolStripMenuItem.Text = "Document";
-            // 
-            // addDocumentToolStripMenuItem
-            // 
-            this.addDocumentToolStripMenuItem.Name = "addDocumentToolStripMenuItem";
-            this.addDocumentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addDocumentToolStripMenuItem.Text = "Add Document";
-            this.addDocumentToolStripMenuItem.Click += new System.EventHandler(this.addDocumentToolStripMenuItem_Click);
+            this.viewDocumentToolStripMenuItem.Name = "viewDocumentToolStripMenuItem";
+            this.viewDocumentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewDocumentToolStripMenuItem.Text = "View Document";
+            this.viewDocumentToolStripMenuItem.Click += new System.EventHandler(this.viewDocumentToolStripMenuItem_Click);
             // 
             // mdi_user
             // 
@@ -109,6 +118,7 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem documentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addDocumentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewDocumentToolStripMenuItem;
     }
 }
 

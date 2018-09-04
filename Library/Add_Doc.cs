@@ -14,7 +14,7 @@ namespace Library
 {
     public partial class Add_Doc : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-QH730TPG\SQLEXPRESS;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False");
+        SqlConnection con = new SqlConnection(@"Data Source=KZORRE-ADMIN\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True;Pooling=False");
         public Add_Doc()
         {
             InitializeComponent();
@@ -22,47 +22,53 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DateTime date = new DateTime();
-            string mydate = date.ToString("dd-MM-yyyy");
-            DateTimePicker dp = new DateTimePicker();
+            string newdate = dateTimePicker1.Text; //parse date picker to string value
+            DateTime dt = Convert.ToDateTime(newdate); //insert into method for conversion to system date
+            
             //Connection
-            con.Open(); //open database server
-                        /*SqlCommand cmd = con.CreateCommand();
-                          cmd.CommandType = CommandType.Text;
-                          cmd.CommandText = "insert into Document_Info VALUES ('" + textBox1.Text+"', '"+ textBox2.Text + "', '"+ textBox3.Text + "', '"+ dateTimePicker1.Text + "', "+ textBox5.Text + ") ";
-                         cmd.ExecuteNonQuery();*/
-            SqlCommand sc = new SqlCommand("INSERT INTO Document_Info VALUES(@VAL1, @VAL2, @VAL3,@VAL4, @VAL5)", con);
-            sc.Parameters.AddWithValue("@VAL1", textBox1.Text);
-            sc.Parameters.AddWithValue("@VAL2", textBox2.Text);
-            sc.Parameters.AddWithValue("@VAL3", textBox3.Text);
-            //sc.Parameters.AddWithValue("@VAL4", dateTimePicker1.ToString());
-           sc.Parameters.AddWithValue("@VAL4", dateTimePicker1.Text);
-            sc.Parameters.AddWithValue("@VAL5", textBox5.Text);
+            con.Open();
+            //open database server
 
-            int i = sc.ExecuteNonQuery();
-            MessageBox.Show(i+"Document added successfully");
-            con.Close();
+            SqlCommand sc = con.CreateCommand();
+             sc.CommandType = CommandType.Text;
+             sc.CommandText = "INSERT INTO Doc_Info  values('" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "', '"+ dt.ToShortDateString()+ "' , '"+ textBox5.Text + "')";
+             sc.ExecuteNonQuery();
+             // int i = sc.ExecuteNonQuery();
+
+             textBox1.Text = "";
+             textBox2.Text = "";
+             textBox3.Text = "";
+             textBox5.Text = "";
+
+
+             MessageBox.Show(" Document added successfully");
+
+             con.Close();
+
+
+
+
+           /* DateTime dateTime = new DateTime();
+
             
 
 
-            //Try parse
-            /*DateTime dt;
-             if (DateTime.TryParseExact(dateTimePicker1.Text.Trim(), "Enter system date", CultureInfo.InvariantCulture, DateTimeStyles.None, out dt))
-             {
-                 cmd.ExecuteNonQuery();
-             }*/
-           // con.Close();//close connected datababse
+            SqlCommand sc = new SqlCommand ("INSERT INTO Doc_Info VALUES(@VAL1, @VAL2, @VAL3,CONVERT(datetime, @VAL4), @VAL5)", con);
+            sc.Parameters.AddWithValue("@VAL1", textBox1.Text);
+            sc.Parameters.AddWithValue("@VAL2", textBox2.Text);
+            sc.Parameters.AddWithValue("@VAL3", textBox3.Text);
+            sc.Parameters.AddWithValue("@VAL4",dateTimePicker1.Text );
+            sc.Parameters.AddWithValue("@VAL5", textBox5.Text);
+            sc.ExecuteNonQuery();
+            MessageBox.Show(" Document added successfully"); // Convert(dateTime, '"+dateTimePicker1.text+"', 0)
+
+            //Close connection
+            con.Dispose();*/
+            
 
 
 
-           // textBox1.Text = "";
-           // textBox2.Text = "";
-            //textBox3.Text = "";
-            //dateTimePicker1.ToString();
-            //textBox5.Text = "";
 
-            //Display operation success
-           // MessageBox.Show("Document added successfully");
         }
     }
 }

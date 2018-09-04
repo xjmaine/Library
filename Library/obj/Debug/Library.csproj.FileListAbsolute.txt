@@ -10,3 +10,16 @@ C:\Users\KZORRE-HR\Documents\C# Projects\Libra\Library\Library\obj\Debug\Library
 C:\Users\KZORRE-HR\Documents\C# Projects\Libra\Library\Library\obj\Debug\Library.pdb
 C:\Users\KZORRE-HR\Documents\C# Projects\Libra\Library\Library\obj\Debug\Library.mdi_user.resources
 C:\Users\KZORRE-HR\Documents\C# Projects\Libra\Library\Library\obj\Debug\Library.Add_Doc.resources
+C:\Users\user\Source\Repos\Library\Library\bin\Debug\Library.exe.config
+C:\Users\user\Source\Repos\Library\Library\bin\Debug\Library.exe
+C:\Users\user\Source\Repos\Library\Library\bin\Debug\Library.pdb
+C:\Users\user\Source\Repos\Library\Library\obj\Debug\Library.csprojAssemblyReference.cache
+C:\Users\user\Source\Repos\Library\Library\obj\Debug\Library.Add_Doc.resources
+C:\Users\user\Source\Repos\Library\Library\obj\Debug\Library.Login.resources
+C:\Users\user\Source\Repos\Library\Library\obj\Debug\Library.mdi_user.resources
+C:\Users\user\Source\Repos\Library\Library\obj\Debug\Library.Properties.Resources.resources
+C:\Users\user\Source\Repos\Library\Library\obj\Debug\Library.csproj.GenerateResource.cache
+C:\Users\user\Source\Repos\Library\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Users\user\Source\Repos\Library\Library\obj\Debug\Library.exe
+C:\Users\user\Source\Repos\Library\Library\obj\Debug\Library.pdb
+C:\Users\user\source\repos\Library\Library\obj\Debug\Library.Doc_View.resources

@@ -114,5 +114,13 @@ namespace Library
 
             ad.Show();
         }
+
+        private void viewDocumentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Doc_View dv = new Doc_View();
+            mdi_user mu = new mdi_user();
+            mu.Hide();
+            dv.Show();
+        }
     }
 }
