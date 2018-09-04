@@ -16,7 +16,7 @@ namespace Library
         //Add_Doc instance
         Add_Doc ad = new Add_Doc();
 
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-QH730TPG\SQLEXPRESS;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False");
+        SqlConnection con = new SqlConnection(@"Data Source=KZORRE-ADMIN\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True;Pooling=False");
 
         int count = 0;
         public Login()
@@ -43,7 +43,7 @@ namespace Library
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Libra_Person where Username ='"+textBox1.Text+"' and password ='"+textBox2.Text+"' ";
+            cmd.CommandText = "select * from   Person where Username ='"+textBox1.Text+"' and password ='"+textBox2.Text+"' ";
             cmd.ExecuteNonQuery();
 
             DataTable dt = new DataTable();
